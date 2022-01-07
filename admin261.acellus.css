@@ -1,0 +1,185 @@
+:root {
+    --nord0: #2e3440;
+    --nord1: rgba(59, 66, 82, 1);
+    --nord2: #434c5e;
+    --nord3: #4c566a;
+    --nord4: #d8dee9;
+    --nord5: #e5e9f0;
+    --nord6: #eceff4;
+    --nord7: #8fbcbb;
+    --nord8: #88c0d0;
+    --nord9: #81a1c1;
+    --nord10: #5e81ac;
+    --nord11: #bf616a;
+    --nord12: #d08770;
+    --nord13: #ebcb8b;
+    --nord14: #a3be8c;
+    --nord15: #b48ead;
+    --nord3-4: #929AAA;
+}
+.recovery,.acellus-logo,.helpvideo,.review,.grammar_header{
+
+    background: var(--nord1);
+    border-bottom:var(--nord0)
+}
+#text, .writing-header, .writing-footer{
+    background-color: var(--nord2)
+}
+.body,.page{
+    background: var(--nord3);
+}
+
+div#student_footer div{
+    background: var(--nord0);
+    font: italic bold 14px/50px Roboto, Roboto, Arial, sans-serif;
+}
+
+
+.counter > span{
+    background:var(--nord3)
+}
+
+.counter > span.counter_decor.counter_bottom{
+box-shadow:0 1px 0px -1px var(--nord3), 0 2px 0px -2px var(--nord3), 0 3px 0px -3px var(--nord3), 0 5px 0px -4px var(--nord3), 0 7px 0px -5px var(--nord3), 0 9px 0px -6px var(--nord3), 0 10px 0px -7px var(--nord3), 0 10px 23px -9px rgba(0, 0, 0, 0.8)
+}
+.scale-with-grid{
+    filter: brightness(1);
+}
+.page{
+box-shadow: 0 0 5px var(--nord0);
+border: solid 1px var(--nord0)
+}
+
+.background-book{
+background: var(--nord2)}
+.scrollabletext p{
+text-align:justify;
+
+}
+/*text*/
+h1, h2, h3, h4, h5, h6,blockquote, blockquote p{
+ color:var(--nord5) !important
+}/*main style*/
+#text{
+color:var(--nord5)
+}
+div#text div{
+    color: var(--nord5)
+}
+.counter > span span{
+color:var(--nord5)
+}
+/*Answer block*/
+.text-answer,.image-answer{
+background:var(--nord1);
+border:none;
+border-radius:0;
+}
+.text-answer:hover,.image-answer:hover{
+background:var(--nord1);
+transition: .5s ease;
+transform: scale(1.1);
+}
+.text-answer *:hover,.image-answer *:hover{
+color:var(--nord6)!important
+}
+/*||Note Container*/
+.menu{
+    background:var(--nord2)
+}
+/*help*/
+#student_help .menu h3, #student_help .menu h2{
+background:var(--nord1)
+}
+#student_help .menu{
+border-left-color:var(--nord1);
+}
+
+/*text*/
+div#notecontainer *{
+ color:var(--nord5)
+}
+/*buttons*/
+.menu a:not(.back-button), .teacherInfo{
+background:var(--nord3);
+color:var(--nord5);
+border-bottom: 1px solid var(--nord0)
+}
+.menu a:not(.back-button):hover, .teacherInfo:hover{
+background:var(--nord3);
+color:var(--nord8);
+}
+.button, input[type="submit"], input[type="reset"], input[type="button"]{  
+    background-color:rgba(0, 0, 0, 0);
+    background-image:var(--nord1);
+    border: none;
+    text-shadow: var(--nord0);
+
+}
+.button:hover{
+    background-color:rgba(0, 0, 0, 0);
+    background-image:var(--nord1);
+    border: none;
+}
+.button, input, optgroup, select, textarea {
+    color:var(--nord6);
+
+}
+.button:hover, input:hover, optgroup:hover, select:hover, textarea:hover {
+    color:var(--nord8);
+    transition: .1s ease;
+    transform: scale(1.15);
+}
+.notebuttons{
+    background-color:var(--nord1)
+}
+#printButton{
+    background:var(--nord1);
+    border: none;
+}
+#printButton:hover #printButtonIcon, #printButton:hover
+{   transition: .1s ease;
+    transform: scale(1.1);
+    color:var(--nord8);
+}
+#backIcon:hover{
+    color:var(--nord8);
+    transform: translateX(-2px);
+}
+/*||English "Book"/
+/*text*/
+div.scrolling-book *{
+color:var(--nord4)!important
+}
+/*enable selecting (may not work)*/
+html{
+-webkit-user-select: text !important
+-khtml-user-select: text !important
+-moz-user-select: text !important
+-o-user-select: text !important
+}
+/*unknown code*/
+.image-question{
+    z-index: 0;
+    background: url('..img/test.jpg') no-repeat;
+    position: relative;
+}
+/*images*/
+img.scale-with-grid{
+    position:static;
+}
+/*||Print Scr*/
+.lightbox_content{
+background:var(--nord1)
+}
+/*buttons*/
+.lightbox_close
+{
+color:var(--nord6)
+}
+.lightbox_close:hover
+{   transition: .1s ease;
+    transform: scale(1.1);
+    color:var(--nord8)
+}
+/*||Expiremental*/
