@@ -1,37 +1,45 @@
 :root {
-    --nord0: #2e3440;
-    --nord1: rgba(59, 66, 82, 1);
-    --nord2: #434c5e;
-    --nord3: #4c566a;
-    --nord4: #d8dee9;
-    --nord5: #e5e9f0;
-    --nord6: #eceff4;
-    --nord7: #8fbcbb;
-    --nord8: #88c0d0;
-    --nord9: #81a1c1;
-    --nord10: #5e81ac;
-    --nord11: #bf616a;
-    --nord12: #d08770;
-    --nord13: #ebcb8b;
-    --nord14: #a3be8c;
-    --nord15: #b48ead;
+    --nordx: #20242c;
+    --nord0: #2e3440;  /*dark1*/
+    --nord1: #3b4252;  /*dark2*/
+    --nord2: #434c5e;  /*dark3*/
+    --nord3: #4c566a;  /*dark4*/
+    --nord4: #d8dee9;  /*light1*/
+    --nord5: #e5e9f0;  /*light2*/
+    --nord6: #eceff4;  /*light3*/
+    --nord7: #8fbcbb;  /*frost1*/
+    --nord8: #88c0d0;  /*frost2*/
+    --nord9: #81a1c1;  /*frost3*/
+    --nord11: #bf616a; /*red*/
+    --nord12: #d08770; /*orange*/
+    --nord13: #ebcb8b; /*yellow*/
+    --nord14: #a3be8c; /*green*/
+    --nord15: #b48ead; /*purple*/
     --nord3-4: #929AAA;
+
 }
-.recovery,.acellus-logo,.helpvideo,.review,.grammar_header{
+.recovery,.acellus-logo,.helpvideo,.review,.grammar_header,.exam{
 
     background: var(--nord1);
     border-bottom:var(--nord0)
 }
-#text, .writing-header, .writing-footer{
+#text, .writing-header{
     background-color: var(--nord2)
 }
-.body,.page{
-    background: var(--nord3);
+.writing-footer{
+    background-color: var(--nord2);
+    border-top: 1px solid var(--nord0)
+}
+.body,.page,.page-wrapper{
+    background: var(--nord2);
+    scrollbar-width: thin;
+    scrollbar-color: var(--nord2)var(--nord1);
 }
 
 div#student_footer div{
     background: var(--nord0);
     font: italic bold 14px/50px Roboto, Roboto, Arial, sans-serif;
+    
 }
 
 
@@ -69,23 +77,76 @@ div#text div{
 .counter > span span{
 color:var(--nord5)
 }
+/*||Video Player*/
+.plyr--video .plyr__controls{
+background: linear-gradient(180deg, #434c5eb5 0%, var(--nord2) 100%);
+color:var(--nord6)
+}
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover{
+background:none;
+color:var(--nord8)
+}
+.plyr__control--overlaid{
+background:var(--nord2);
+background: none;
+box-shadow: none;
+color: var(--nord5)
+}
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover{
+background: none;
+box-shadow: none;
+color:var(--nord8)
+}
 /*Answer block*/
+.imgAnswer_text{   
+border: 3px solid var(--nord1);
+background: var(--nord3);
+color:var(--nord6);
+position: absolute;
+margin:0;
+margin-top: -18px;
+margin-left: -25px
+}
 .text-answer,.image-answer{
-background:var(--nord1);
-border:none;
+background:var(--nord3);
+border: 3px solid var(--nord1);
 border-radius:0;
 }
 .text-answer:hover,.image-answer:hover{
-background:var(--nord1);
-transition: .5s ease;
+background:var(--nord3);
+transition: .25s ease;
 transform: scale(1.1);
+
 }
 .text-answer *:hover,.image-answer *:hover{
 color:var(--nord6)!important
 }
+#answerText{
+background:var(--nord3);
+border: 1px solid var(--nord0);
+color:var(--nord6);
+transform: scale(1);
+}
+.keyboard_button{
+color:var(--nord6);
+}
+/*images*/
+#_A1{
+background:var(--nord3);
+border: 3px solid var(--nord1);
+padding:20px
+}
+.image-question{
+border:none 
+}
 /*||Note Container*/
 .menu{
     background:var(--nord2)
+}
+#notecontainer{
+    scrollbar-color: var(--nord2)var(--nord1);
+    scrollbar-width: thin;
+    transition: scrollbar-color 0.3s ease-out;
 }
 /*help*/
 #student_help .menu h3, #student_help .menu h2{
@@ -96,8 +157,26 @@ border-left-color:var(--nord1);
 }
 
 /*text*/
+.Notebook_Key{
+background-color:var(--nord3);
+border:solid 2px var(--nord1)
+}
+.Notebook_Key strong{
+color: var(--nord13) !important
+}
 div#notecontainer *{
  color:var(--nord5)
+}
+/*images*/
+.Notebook_Key > img:nth-child(1){
+visibility:hidden
+}
+.Notebook_Key:after{
+visibility: visible;
+position: relative;
+top: -30px;
+left: 5px;
+content: "🔑";
 }
 /*buttons*/
 .menu a:not(.back-button), .teacherInfo{
@@ -182,4 +261,28 @@ color:var(--nord6)
     transform: scale(1.1);
     color:var(--nord8)
 }
+/*||Word Processor*/
+/*@Footer*/
+/*text*/
+#grammar-message{
+color:var(--nord11);
+font: normal 17px Roboto
+}
+/*buttons*/
+.grammar-box button, #resetText{
+background:var(--nord8)
+}
+.grammar-box button:hover, #resetText{
+background:var(--nord7);
+color:var(--nord6);
+transform: none 
+}
+/*@Instructions*/
+/*text*/
+#instructions-content *{
+color:var(--nord4)
+}
 /*||Expiremental*/
+.overlay{
+background:rgba(67, 76, 94, .75);
+}
