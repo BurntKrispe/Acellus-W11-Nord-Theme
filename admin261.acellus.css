@@ -21,23 +21,23 @@
 .recovery,.acellus-logo,.helpvideo,.review,.grammar_header,.exam{
 
     background: var(--nord1);
-    border-bottom:var(--nord0)
+    border-bottom:var(--nord1)
 }
 #text, .writing-header{
     background-color: var(--nord2)
 }
 .writing-footer{
     background-color: var(--nord2);
-    border-top: 1px solid var(--nord0)
+    border-top: 1px solid var(--nord)
 }
 .body,.page,.page-wrapper{
-    background: var(--nord2);
+    background: var(--nord1);
     scrollbar-width: thin;
-    scrollbar-color: var(--nord2)var(--nord1);
+    scrollbar-color: var(--nord1)var(--nord0);
 }
 
 div#student_footer div{
-    background: var(--nord0);
+    background: var(--nord1);
     font: italic bold 14px/50px Roboto, Roboto, Arial, sans-serif;
     
 }
@@ -79,12 +79,11 @@ color:var(--nord5)
 }
 /*||Video Player*/
 .plyr--video .plyr__controls{
-background: linear-gradient(180deg, #434c5eb5 0%, var(--nord2) 100%);
+background: var(--nord0);
 color:var(--nord6)
 }
-.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover{
-background:none;
-color:var(--nord8)
+.plyr__video-wrapper{
+background-color:var(--nordx)
 }
 .plyr__control--overlaid{
 background:var(--nord2);
@@ -92,15 +91,30 @@ background: none;
 box-shadow: none;
 color: var(--nord5)
 }
-.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover{
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:after{
+border-left-color:var(--nord4)
+}
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded="true"]{
+color:var(--nord8);
 background: none;
 box-shadow: none;
-color:var(--nord8)
+}
+.plyr__menu__container{
+background:var(--nord1);
+border-radius:0;
+padding: 0;
+bottom:110%
+}
+.plyr__menu__container .plyr__control, .plyr__control .plyr__control--forward{
+color:var(--nord6)!important
+}
+.plyr__menu__container::after {
+display:none
 }
 /*Answer block*/
 .imgAnswer_text{   
-border: 3px solid var(--nord1);
-background: var(--nord3);
+border: 3px solid var(--nord2);
+background: var(--nord2);
 color:var(--nord6);
 position: absolute;
 margin:0;
@@ -108,21 +122,20 @@ margin-top: -18px;
 margin-left: -25px
 }
 .text-answer,.image-answer{
-background:var(--nord3);
-border: 3px solid var(--nord1);
-border-radius:0;
+background:var(--nord2);
+border: 1px solid var(--nord2);
+border-radius:4px;
+
 }
 .text-answer:hover,.image-answer:hover{
-background:var(--nord3);
+border:1px solid var(--nord8);
 transition: .25s ease;
-transform: scale(1.1);
-
 }
 .text-answer *:hover,.image-answer *:hover{
 color:var(--nord6)!important
 }
 #answerText{
-background:var(--nord3);
+background:var(--nord1);
 border: 1px solid var(--nord0);
 color:var(--nord6);
 transform: scale(1);
@@ -132,16 +145,17 @@ color:var(--nord6);
 }
 /*images*/
 #_A1{
-background:var(--nord3);
-border: 3px solid var(--nord1);
-padding:20px
+background:var(--nord2);
+padding:20px;
+border-radius: 4px;
+border: 1px solid var(--nord2)
 }
 .image-question{
 border:none 
 }
 /*||Note Container*/
 .menu{
-    background:var(--nord2)
+    background:var(--nord0)
 }
 #notecontainer{
     scrollbar-color: var(--nord2)var(--nord1);
@@ -150,22 +164,23 @@ border:none
 }
 /*help*/
 #student_help .menu h3, #student_help .menu h2{
-background:var(--nord1)
+background:var(--nord0)
 }
 #student_help .menu{
-border-left-color:var(--nord1);
+border-left-color:var(--nord0);
 }
 
 /*text*/
 .Notebook_Key{
 background-color:var(--nord3);
-border:solid 2px var(--nord1)
+border:solid 2px var(--nord1);
 }
 .Notebook_Key strong{
 color: var(--nord13) !important
 }
 div#notecontainer *{
- color:var(--nord5)
+ color:var(--nord5);
+ background-color: transparent !important
 }
 /*images*/
 .Notebook_Key > img:nth-child(1){
@@ -180,13 +195,14 @@ content: "🔑";
 }
 /*buttons*/
 .menu a:not(.back-button), .teacherInfo{
-background:var(--nord3);
+background:var(--nord0);
 color:var(--nord5);
-border-bottom: 1px solid var(--nord0)
+border-bottom: none;
+margin:1px
 }
 .menu a:not(.back-button):hover, .teacherInfo:hover{
-background:var(--nord3);
-color:var(--nord8);
+background:var(--nord1);
+color:var(--nord5);
 }
 .button, input[type="submit"], input[type="reset"], input[type="button"]{  
     background-color:rgba(0, 0, 0, 0);
@@ -263,6 +279,11 @@ color:var(--nord6)
 }
 /*||Word Processor*/
 /*@Footer*/
+/*page*/
+.page{
+border:none;
+box-shadow: none
+}
 /*text*/
 #grammar-message{
 color:var(--nord11);
