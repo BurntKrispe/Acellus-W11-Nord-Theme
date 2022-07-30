@@ -10,6 +10,7 @@
     --nord7: #8fbcbb;  /*frost1*/
     --nord8: #88c0d0;  /*frost2*/
     --nord9: #81a1c1;  /*frost3*/
+    --nord10: #5e81ac;  /*frost3*/
     --nord11: #bf616a; /*red*/
     --nord12: #d08770; /*orange*/
     --nord13: #ebcb8b; /*yellow*/
@@ -20,12 +21,12 @@
 }
 .recovery,.acellus-logo,.helpvideo,.review,.grammar_header,.exam{
 
-    background: var(--nord1);
+    background: var(--nord0);
     border-bottom:var(--nord1)
 }
 
 .body,.page,.page-wrapper{
-    background: var(--nord1);
+    background: var(--nord0);
     scrollbar-width: thin;
     scrollbar-color: var(--nord2)var(--nord1);
 }
@@ -291,18 +292,25 @@ color:var(--nord6)
 /*page*/
 .page{
 border:none;
-box-shadow: none
+box-shadow: none;
+padding: 0
 }
 #text, .writing-header{
-    background-color: var(--nord1)
-}
+    background-color: var(--nord2);
+    padding: 2%;
+    border-radius: 8px;
+    box-shadow:4px 4px 8px var(--nordx)
+    }
 .overlay{
     background:#3b425285
 }
 /*@Footer*/
 .writing-footer{
-    background-color: var(--nord0);
-    border-top: 1px solid var(--nord)
+    background-color: var(--nord1);
+    border-top: none;
+    border-radius: 8px;
+    width: 95%; 
+    padding: 10px 15px;
 }
 /*text*/
 #grammar-message{
@@ -310,14 +318,46 @@ color:var(--nord11);
 font: normal 17px Roboto
 }
 /*buttons*/
-.grammar-box button, #resetText{
-background:var(--nord8)
-}
-.grammar-box button:hover, #resetText{
-background:var(--nord7);
-color:var(--nord6);
-transform: none 
-}
+    .grammar-box button, #resetText{
+        background:var(--nord8);
+        color: var(--nord1);
+        font-style: normal;
+        font-size:1.125em;
+        font-weight: 400;
+        box-shadow: 0px 2px 1px var(--nordx);
+        transition:0s 0.8s;
+    }
+    .grammar-box button:hover, #resetText{
+        background:var(--nord7);
+        color: var(--nord1);
+        transition:0s;
+    }
+    .grammar-box button:active, #resetText{
+        background:var(--nord7);
+        color: var(--nord2);
+        transition:0s;
+        box-shadow: none;
+    }
+/*grammar box*/
+    .progress-indicator > li{
+        color: var(--nord6)
+    }
+    .progress-indicator > li .bubble{
+        background-color: var(--nord7)
+    }
+    .progress-indicator > li .bubble::after, .progress-indicator > li .bubble::before{
+        background-color: var(--nord7)
+    }
+    .progress-indicator > li.selected span:not(.bubble){
+        background: var(--nord14)
+    }
+    .progress-indicator > li.selected span.bubble{
+        background-color: var(--nord14)
+    }
+    .progress-indicator > li.selected span.bubble::after{
+        background-color: var(--nord14)
+    }
+
 /*@Instructions*/
 /*text*/
 #instructions-content *{
