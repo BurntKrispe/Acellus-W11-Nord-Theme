@@ -17,6 +17,7 @@
     --nord14: #a3be8c; /*green*/
     --nord15: #b48ead; /*purple*/
     --nord3-4: #929AAA;
+    --nord1blur:#3b4252cc
 
 }
 .recovery,.acellus-logo,.helpvideo,.review,.grammar_header,.exam{
@@ -83,7 +84,7 @@ color:var(--nord5)
 }
 /*||Video Player*/
 .plyr--video .plyr__controls{
-background: var(--nord1);
+background: var(--nord0);
 color:var(--nord6)
 }
 .plyr__video-wrapper{
@@ -104,14 +105,16 @@ background: none;
 box-shadow: none;
 }
 .plyr__menu__container{
-background:var(--nord1);
-border-radius:0;
+background:var(--nord1blur);
+border-radius:8px;
 padding: 0;
-bottom:110%
+bottom:110%;
+backdrop-filter: blur(10px);
 }
 .plyr__menu__container .plyr__control, .plyr__control .plyr__control--forward{
 color:var(--nord6)!important
 }
+
 .plyr__menu__container::after {
 display:none
 }
@@ -121,6 +124,10 @@ background:none;
     font-family: Trebuchet MS;
     text-shadow: 2px 1px var(--nord1);
 }
+.plyr__menu__container [role="menu"]{
+padding: 4px;
+}
+
 /*Answer block*/
 .imgAnswer_text{   
 border: 3px solid var(--nord2);
@@ -166,23 +173,46 @@ border: none;
 border:none 
 }
 /*||Note Container*/
-.menu{
-    background:var(--nord0)
+    #menu_items{
+        transition: 167ms right Cubic-bezier(0.55,0.55,0,1) ;
+    }
+    .menu{
+        background:var(--nord1);
+        transition: 167ms right Cubic-bezier(0.55,0.55,0,1);
+        border-radius: 0px 0px 0px 8px;
+        border:none;
+        box-shadow: 4px 4px 16px var(--nordx);
+        position:fixed
 }
 #notecontainer{
     scrollbar-color: var(--nord0)var(--nord1);
     scrollbar-width: thin;
     transition: scrollbar-color 0.3s ease-out;
 }
+/*Menu Items*/
+    #menu_items{
+        z-index: 2000 !important;
+        padding-right:0 !important;
+        margin-right: 290px
+    }
 /*help*/
-#student_help .menu h3, #student_help .menu h2{
-background:var(--nord1)
-}
-#student_help .menu{
-border-left: none;
-border-left-color:var(--nord1);
-}
-
+    #student_help .menu h3, #student_help .menu h2{
+        background:var(--nord1)
+    }
+    #student_help .menu{
+        border-left: none;
+        border-left-color:var(--nord1);
+    }
+/*writing instructions*/
+    #writing_instructions .menu h3{
+        background:none;
+    }
+/**/
+    #student_resources .menu h3, #student_resources .menu h2{
+        background:none;
+        background-image: none
+        
+    }
 /*text*/
 .Notebook_Key{
 background-color:var(--nord3);
@@ -207,16 +237,19 @@ left: 5px;
 content: "🔑";
 }
 /*buttons*/
-.menu a:not(.back-button), .teacherInfo{
-background:var(--nord0);
-color:var(--nord5);
-border-bottom: none;
-margin:1px
-}
-.menu a:not(.back-button):hover, .teacherInfo:hover{
-background:var(--nord1);
-color:var(--nord5);
-}
+    .menu a:not(.back-button), .teacherInfo{
+        padding-left:16px;
+        margin-bottom: 2px;
+        background:var(--nord1);
+        color:var(--nord5);
+        border-bottom: none;
+    }
+    .menu a:not(.back-button):hover, .teacherInfo:hover{
+        
+        background:var(--nord2);
+        color:var(--nord5);
+        border-radius: 4px;
+    }
 .button, input[type="submit"], input[type="reset"], input[type="button"]{  
     background-color:rgba(0, 0, 0, 0);
     background-image:var(--nord1);
@@ -291,41 +324,69 @@ color:var(--nord6)
 
 /*page*/
 .page{
-border:none;
-box-shadow: none;
-padding: 0
+    border:none;
+    box-shadow: none;
+    padding: 0;
+    max-width:82%
+}
+.page_wrapper{
+    max-width:85em
 }
 #text, .writing-header{
-    background-color: var(--nord2);
-    padding: 2%;
+    background-color: var(--nord1);
+    padding: 16px;
     border-radius: 8px;
-    box-shadow:4px 4px 8px var(--nordx)
+    box-shadow:1px 1px 8px var(--nordx);
+    font-size: min(max(16px, 3vw), 20px);
     }
 .overlay{
-    background:#3b425285
+    background:var(--nord1blur);
+    backdrop-filter: blur(1px);
+    border-radius: 8px;
+    z-index: 9;
+}
+.page > div:nth-child(3){
+    flex:none !important;
 }
 /*@Footer*/
 .writing-footer{
     background-color: var(--nord1);
     border-top: none;
     border-radius: 8px;
-    width: 95%; 
+    max-width: 95%; 
     padding: 10px 15px;
+    box-shadow: 1px 1px 8px var(--nordx);
 }
 /*text*/
 #grammar-message{
-color:var(--nord11);
-font: normal 17px Roboto
+    color:var(--nord11);
+    font: normal 17px Roboto;
+    font-size: min(max(10px, 3vw), 17px);
+    overflow: auto;
+    max-width: none;
+    margin-right: 10px !important
 }
 /*buttons*/
+    #save{
+        margin-left: 0 !important;
+        margin-right:auto !important;
+        margin-top:auto
+    }
+    #submit{
+        margin-top:auto;
+        margin-left:8px !important
+    }
     .grammar-box button, #resetText{
         background:var(--nord8);
         color: var(--nord1);
         font-style: normal;
-        font-size:1.125em;
+        font-size:100%;
         font-weight: 400;
-        box-shadow: 0px 2px 1px var(--nordx);
+        box-shadow: 1px 2px 1px var(--nordx);
         transition:0s 0.8s;
+        margin-bottom:auto;
+        height:36px;
+        text-align: center;
     }
     .grammar-box button:hover, #resetText{
         background:var(--nord7);
@@ -336,7 +397,7 @@ font: normal 17px Roboto
         background:var(--nord7);
         color: var(--nord2);
         transition:0s;
-        box-shadow: none;
+        box-shadow: 1px 1px var(--nordx)
     }
 /*grammar box*/
     .progress-indicator > li{
