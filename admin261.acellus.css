@@ -1,5 +1,6 @@
 :root {
     --nordx: #20242c;
+	--nordy: #242933;
     --nord0: #2e3440;  /*dark1*/
     --nord1: #3b4252;  /*dark2*/
     --nord2: #434c5e;  /*dark3*/
@@ -17,13 +18,16 @@
     --nord14: #a3be8c; /*green*/
     --nord15: #b48ead; /*purple*/
     --nord3-4: #929AAA;
-    --nord1blur:#3b4252cc
+    --nord1blur:#3b4252cc;
+	--nord0blur:#2e3440cc;
 
 }
 .recovery,.acellus-logo,.helpvideo,.review,.grammar_header,.exam{
 
-    background: var(--nord0);
-    border-bottom:var(--nord1)
+    background: var(--nord1);
+    border-bottom:var(--nord1);
+	z-index: 2;
+	box-shadow: 1px 1px 8px var(--nordx);
 }
 
 .body,.page,.page-wrapper{
@@ -179,10 +183,10 @@ border:none
     .menu{
         background:var(--nord1);
         transition: 167ms right Cubic-bezier(0.55,0.55,0,1);
-        border-radius: 0px 0px 0px 8px;
         border:none;
-        box-shadow: 4px 4px 16px var(--nordx);
-        position:fixed
+        position:fixed;
+		height: 100%;	
+		bottom:-12px;
 }
 #notecontainer{
     scrollbar-color: var(--nord0)var(--nord1);
@@ -191,7 +195,7 @@ border:none
 }
 /*Menu Items*/
     #menu_items{
-        z-index: 2000 !important;
+        z-index: 1002 !important;
         padding-right:0 !important;
         margin-right: 290px
     }
@@ -323,21 +327,34 @@ color:var(--nord6)
 /*||Word Processor*/
 
 /*page*/
+#writingSection{
+	
+	padding:0
+}
+
 .page{
     border:none;
     box-shadow: none;
     padding: 0;
-    max-width:82%
+    max-width:75em;
+	margin:24px;
+	max-height:none;
+	
 }
 .page_wrapper{
-    max-width:85em
+    max-width:85em;
+	
+		
 }
+
 #text, .writing-header{
     background-color: var(--nord1);
     padding: 16px;
     border-radius: 8px;
     box-shadow:1px 1px 8px var(--nordx);
     font-size: min(max(16px, 3vw), 20px);
+	height:auto;
+	
     }
 .overlay{
     background:var(--nord1blur);
@@ -352,10 +369,9 @@ color:var(--nord6)
 .writing-footer{
     background-color: var(--nord1);
     border-top: none;
-    border-radius: 8px;
-    max-width: 95%; 
     padding: 10px 15px;
     box-shadow: 1px 1px 8px var(--nordx);
+	z-index: 2
 }
 /*text*/
 #grammar-message{
@@ -377,27 +393,27 @@ color:var(--nord6)
         margin-left:8px !important
     }
     .grammar-box button, #resetText{
-        background:var(--nord8);
-        color: var(--nord1);
+        background:var(--nord2);
+        color: var(--nord5);
         font-style: normal;
         font-size:100%;
         font-weight: 400;
-        box-shadow: 1px 2px 1px var(--nordx);
-        transition:0s 0.8s;
+        box-shadow: 1px 1px 1px var(--nordx), 0px 0px 0px 1px var(--nord3);
+        transition:0s 0s;
         margin-bottom:auto;
         height:36px;
         text-align: center;
     }
     .grammar-box button:hover, #resetText{
-        background:var(--nord7);
-        color: var(--nord1);
+        background:var(--nord3);
+        color: var(--nord6);
         transition:0s;
     }
     .grammar-box button:active, #resetText{
-        background:var(--nord7);
-        color: var(--nord2);
+        background:transparent;
+        color: var(--nord4);
         transition:0s;
-        box-shadow: 1px 1px var(--nordx)
+        box-shadow: 1px 1px 0.5px var(--nordx), inset 0px 0px 36px 1px var(--nord3);
     }
 /*grammar box*/
     .progress-indicator > li{
@@ -437,3 +453,129 @@ color:var(--nord4)
 }
 
 /*||Expiremental*/
+
+	#menu_items{
+		padding-top:24px;
+		top:60px;
+		width:24px;
+		height:100%;
+		z-index: 1 !important;
+	}
+@media (max-width: 800px){
+		#menu_items{
+		top:45px;
+	}
+}
+#showInstructions_tab{
+	margin-left:1.5px;
+}
+#showInstructions_tab:after{
+		border-radius: 4px;
+		background: var(--nord10);
+		content: "Instructions";
+		writing-mode:sideways-lr;
+        color: var(--nord4);
+        font-style: normal;
+        font-size:95%;
+        font-weight: bold;
+		width:24px;
+		height: 78px;
+		text-align: center;
+		text-shadow:var(--nord3) 1px 1px;
+		box-shadow: 1px 1px 1px var(--nordx), 0px 0px 0px 1px var(--nord3);
+		translate:18px;
+		transition: 100ms translate Cubic-bezier(0.55,0.55,0,1);
+}
+#showInstructions_tab:hover:after{
+		translate:2px;
+		filter:brightness(110%)
+}
+
+#showInstructions_tab > img:nth-child(1){
+		width:24px;
+		display:none
+	}
+	#showDictionary_tab{
+		margin-left:1.5px
+	}
+#showDictionary_tab:after{
+		border-radius: 4px;
+		background: var(--nord14);
+		content: "Dictionary";
+		writing-mode:sideways-lr;
+        color: var(--nord6);
+        font-style: normal;
+        font-size:95%;
+        font-weight: bold;
+		width:24px;
+		height: 78px;
+		text-align: center;
+		text-shadow:var(--nord3) 1px 1px;
+		box-shadow: 1px 1px 1px var(--nordx), 0px 0px 0px 1px var(--nord3);
+		translate:18px;
+		transition: 100ms translate Cubic-bezier(0.55,0.55,0,1);
+}
+
+#showDictionary_tab:hover:after{
+		translate:2px;
+		filter:brightness(110%)
+}
+	#showDictionary_tab > img:nth-child(1){
+		width:24px;
+		display:none
+	}
+	#pushbutton{
+		margin-left:1.5px
+	
+	}
+	#pushbutton:after{
+		border-radius: 4px;
+		background: var(--nord12);
+		content: "Resources";
+		writing-mode:sideways-lr;
+        color: var(--nord6);
+        font-style: normal;
+        font-size:95%;
+        font-weight: bold;
+		width:24px;
+		height: 78px;
+		text-align: center;
+		text-shadow:var(--nord3) 1px 1px;
+		box-shadow: 1px 1px 1px var(--nordx), 0px 0px 0px 1px var(--nord3);
+		translate:18px;
+		transition: 100ms translate Cubic-bezier(0.55,0.55,0,1);
+	}
+	#pushbutton:hover:after{
+		translate:2px;
+		filter:brightness(110%)
+	}
+	#pushbutton > img:nth-child(1){
+		width:24px;
+		display:none
+	}
+ /*for mobile devices*/
+@media (max-width: 800px){
+#showInstructions_tab:after{
+		translate:0px;
+}	
+	#showInstructions_tab:hover:after{
+		translate:0px!important
+}
+}
+@media (max-width: 800px){
+	#showDictionary_tab:after{
+		translate:0px;
+	}
+	#showDictionary_tab:hover:after{
+		translate:0px!important
+	}
+}
+
+@media (max-width: 800px){
+	#pushbutton:after{
+		translate:0px
+	}
+	#pushbutton:hover:after{
+		translate:0px!important
+	}
+}
