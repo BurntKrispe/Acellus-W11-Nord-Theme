@@ -1,12 +1,3 @@
-/* ==UserStyle==
-@name         Acellus Nord Theme
-@version      20220912.16.54
-@namespace    userstyles.world/user/burntninjas
-@description  W.I.P Acellus based on https://www.nordtheme.com/
-
-@author       burntninjas
-@license      No License
-==/UserStyle== */
 @-moz-document domain("admin261.acellus.com") {
         :root {
         --nordx:#20242c;
