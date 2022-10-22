@@ -113,7 +113,7 @@
         max-width: fit-content;
     }
     .scrolling-book-question{
-        margin: auto 0;
+        margin: 0 auto;
             padding:12px
     }
     /*text*/
@@ -321,23 +321,6 @@
 /*text*/
     div.scrolling-book * {
         color: var(--nord4)!important
-    }
-
-    /*enable selecting (may not work)*/
-    html {
-        -webkit-user-select: text !important -khtml-user-select: text !important -moz-user-select: text !important -o-user-select: text !important
-    }
-
-    /*unknown code*/
-    .image-question {
-        z-index: 0;
-        background: url('..img/test.jpg') no-repeat;
-        position: relative;
-    }
-
-    /*images*/
-    img.scale-with-grid {
-        position: static;
     }
 
     /*||Print Scr*/
@@ -699,9 +682,9 @@
         font-weight: bold;
         width: 26px;
         height: auto;
-		padding:1px;
-		padding-bottom:6px;
-		padding-top: 6px;
+        padding:1px;
+        padding-bottom:6px;
+        padding-top: 6px;
         text-align: center;
         text-shadow: var(--nord3) 1px 1px;
         box-shadow: 1px 1px 1px var(--nordx), 0px 0px 0px 1px var(--nord3);
