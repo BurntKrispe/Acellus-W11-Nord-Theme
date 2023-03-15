@@ -1,4 +1,4 @@
-This project is no longer maintained.
+⚠️ **This project is no longer maintained.**
 
 # Acellus-Nord-Theme
 A Userstyle for Acellus Learning Accelerator based on Windows 11 and [Nord](https://www.nordtheme.com/) design philosophies.
